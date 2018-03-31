@@ -1,0 +1,16 @@
+<div>
+    <h3>PARENT COMPONENT</h3>
+    <p>{{childValue}}</p>
+    <table border= "1px">
+      <tr *ngFor = "let emp of employees">
+        <td width = "50%">
+          {{emp}}
+        </td>
+        <td width = "50%">
+            <input type="button" (click)= "setName(emp)" value="Send to child">
+        </td>
+        <tr>
+    </table>
+    <app-employee-child [name]="Name" (outputParent)="EmittedName($event)"></app-employee-child> 
+    
+</div>      
